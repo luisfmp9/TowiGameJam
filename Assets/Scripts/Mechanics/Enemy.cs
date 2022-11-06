@@ -7,10 +7,11 @@ public class Enemy : MonoBehaviour{
 
     public Detector detectScript;
     public bool started;
-    private Timer timeUI;
+    public GameObject panel;
+    private contarClicks countClicker;
     void Awake() {
         started = false;
-        timeUI= GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
+        countClicker = GameObject.FindGameObjectWithTag("Counter").GetComponent<contarClicks>();
     }
 
     void Update() {
@@ -20,7 +21,10 @@ public class Enemy : MonoBehaviour{
     void DetectPlayer() {
         if (detectScript.deply && !started) {
             started = true;
-            timeUI.Battle();
+            panel.SetActive(true);
+            Timer.timerSg.Battle();
+            countClicker.protector = gameObject;
+            countClicker.preguntaN = gameObject.GetComponent<Pregunta>();
         }
     }
     

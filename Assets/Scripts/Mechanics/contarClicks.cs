@@ -24,6 +24,7 @@ public class contarClicks : MonoBehaviour {
             if(cantidadClicks==preguntaN.respuestaCorrecta){
                 Destroy(protector);
                 Timer.timerSg.battle = false;
+                cantidadClicks = 0;
             } else {
                 esManager.AbrirUI(panelPerdiste);
             }

@@ -18,7 +18,12 @@ public class Player2dPlatform : MonoBehaviour
     public Sprite idleSprite, runSprite;
     public Animator anim;
     public AudioSource sound;
+    private Timer timeUI;
 
+    void Awake()
+    {
+        timeUI = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -40,23 +45,16 @@ public class Player2dPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (finalty)
+        if (!timeUI.battle)
         {
-            if (!finished)
-            {
-                Move();
-                Life();
-            }
-            else
-            {
-                jump = 0;
-                speed = 0;
-            }
+            Move();
         }
         else
         {
-            Move();
-            Life();
+            Vector3 vel = rb2d.velocity;
+            vel.x = 0;
+            rb2d.velocity = vel;
+            look.sprite = idleSprite;
         }
 
     }
@@ -112,18 +110,6 @@ public class Player2dPlatform : MonoBehaviour
         }
 
 
-    }
-
-    void Life()
-    {
-        /*if (deter.deply&&!living.hurting)
-        {
-            living.ChangeLife(-1);
-        }
-        if (living.dead)
-        {
-            //SceneManager.LoadScene("Defeat");
-        }*/
     }
     void FixedUpdate (){
         if (IsGrounded() && Input.GetAxis("Jump")>0.3)
