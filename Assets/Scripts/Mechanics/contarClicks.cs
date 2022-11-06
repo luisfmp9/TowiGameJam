@@ -7,7 +7,8 @@ public class contarClicks : MonoBehaviour {
     
     public Text cantidadClicksTxt;
     int cantidadClicks;
-
+    public Pregunta preguntaN;
+    public GameObject protector;
     void Start(){
         cantidadClicks=0;
     }
@@ -17,8 +18,8 @@ public class contarClicks : MonoBehaviour {
             cantidadClicks++;
             cantidadClicksTxt.text=cantidadClicks.ToString();
         } else if (Timer.timerSg.timer<=0){
-            if(cantidadClicks==Pregunta.preguntaSg.respuestaCorrecta){
-                Destroy(Enemy);
+            if(cantidadClicks==preguntaN.respuestaCorrecta){
+                Destroy(protector);
             } else {
                 mostrar(Perdiste);
             }
