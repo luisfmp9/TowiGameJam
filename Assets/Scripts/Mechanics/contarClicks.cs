@@ -8,7 +8,9 @@ public class contarClicks : MonoBehaviour {
     public Text cantidadClicksTxt;
     int cantidadClicks;
     public Pregunta preguntaN;
-    public GameObject protector;
+    public GameObject protector, panelPerdiste;
+    public EscenManager esManager;
+
     void Start(){
         cantidadClicks=0;
     }
@@ -21,7 +23,7 @@ public class contarClicks : MonoBehaviour {
             if(cantidadClicks==preguntaN.respuestaCorrecta){
                 Destroy(protector);
             } else {
-                mostrar(Perdiste);
+                esManager.AbrirUI(panelPerdiste);
             }
         }
     }

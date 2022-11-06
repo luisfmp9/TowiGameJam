@@ -19,7 +19,6 @@ public class Timer : MonoBehaviour{
 
     void Start(){
         timer= 10f;
-        
     }
 
     void Update(){
