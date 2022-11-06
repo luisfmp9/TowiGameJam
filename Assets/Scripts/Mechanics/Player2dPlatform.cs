@@ -15,6 +15,7 @@ public class Player2dPlatform : MonoBehaviour
     public Detector deter;
     private int direction;
     public SpriteRenderer look;
+    public Sprite idleSprite, runSprite;
     public Animator anim;
     public AudioSource sound;
 
@@ -67,15 +68,18 @@ public class Player2dPlatform : MonoBehaviour
         {
             direction = 1;
             //anim.SetBool("Mover", true);
+            look.sprite = runSprite;
         }
         else if (h < 0)
         {
             direction = -1;
             //anim.SetBool("Mover", true);
+            look.sprite = runSprite;
         }
         else
         {
             //anim.SetBool("Mover", false);
+            look.sprite = idleSprite;
         }
         if (direction == 1)
         {

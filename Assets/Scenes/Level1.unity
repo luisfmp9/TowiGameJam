@@ -901,6 +901,8 @@ MonoBehaviour:
   finished: 0
   deter: {fileID: 0}
   look: {fileID: 484314007}
+  idleSprite: {fileID: 21300000, guid: e52fc010f9557f343b1dea68ebae5dfe, type: 3}
+  runSprite: {fileID: 21300000, guid: aae81d6a3812f6b4fb21d8d70a68a0c6, type: 3}
   anim: {fileID: 0}
   sound: {fileID: 0}
 --- !u!50 &1877573793
