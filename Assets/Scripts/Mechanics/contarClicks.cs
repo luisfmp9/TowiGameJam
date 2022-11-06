@@ -16,6 +16,12 @@ public class contarClicks : MonoBehaviour {
         if(Input.GetMouseButtonDown(0) && Timer.timerSg.timer>0){
             cantidadClicks++;
             cantidadClicksTxt.text=cantidadClicks.ToString();
+        } else if (Timer.timerSg.timer<=0){
+            if(cantidadClicks==Pregunta.preguntaSg.respuestaCorrecta){
+                Destroy(Enemy);
+            } else {
+                mostrar(Perdiste);
+            }
         }
     }
 
