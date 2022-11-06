@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour{
     
     public static Timer timerSg;
     public float timer;
-    Text timerTxt;
+    public Text timerTxt;
 
     void Awake(){
         if(timerSg!=null && timerSg!=this){
@@ -22,8 +22,10 @@ public class Timer : MonoBehaviour{
     }
 
     void Update(){
-        timer -= Time.deltaTime;
-        timerTxt.text=timer.ToString();
+        if(timer>=0){
+            timer -= Time.deltaTime;
+            timerTxt.text=timer.ToString("F0");
+        }
     }
 
 }

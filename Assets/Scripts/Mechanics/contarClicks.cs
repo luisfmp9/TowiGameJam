@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class contarClicks : MonoBehaviour {
     
-    Text cantidadClicksTxt;
+    public Text cantidadClicksTxt;
     int cantidadClicks;
 
     void Start(){
