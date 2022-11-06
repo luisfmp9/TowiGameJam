@@ -19,9 +19,11 @@ public class contarClicks : MonoBehaviour {
         if(Input.GetMouseButtonDown(0) && Timer.timerSg.timer>0){
             cantidadClicks++;
             cantidadClicksTxt.text=cantidadClicks.ToString();
-        } else if (Timer.timerSg.timer<=0){
+        } else if (Timer.timerSg.timer<=0&& Timer.timerSg.battle)
+        {
             if(cantidadClicks==preguntaN.respuestaCorrecta){
                 Destroy(protector);
+                Timer.timerSg.battle = false;
             } else {
                 esManager.AbrirUI(panelPerdiste);
             }

@@ -5,18 +5,12 @@ using UnityEngine;
 public class Pregunta : MonoBehaviour{
 
     public float respuestaCorrecta;
-    private float variable1, variable2;
+    private int variable1, variable2;
     public Enemy starting;
     
     void Awake() {
-        variable1 = Random.Range(0f, 4f);
-        variable2 = Random.Range(0f, 5f);
+        variable1 = Random.Range(0, 4);
+        variable2 = Random.Range(0, 5);
         respuestaCorrecta = variable1 * variable2;
     }
-
-    void Update() {
-
-    }
-
-
 }

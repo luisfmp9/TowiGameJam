@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour{
     public static Timer timerSg;
     public float timer;
     public Text timerTxt;
-
+    public bool battle;
     void Awake(){
         if(timerSg!=null && timerSg!=this){
             Destroy(this);
@@ -17,14 +17,24 @@ public class Timer : MonoBehaviour{
         }
     }
 
-    void Start(){
-        timer= 10f;
+    public void Battle(){
+        timer = 10;
     }
 
     void Update(){
-        if(timer>=0){
+        BattleTime();
+    }
+    void BattleTime()
+    {
+        if (timer > 0)
+        {
+            battle = true;
             timer -= Time.deltaTime;
-            timerTxt.text=timer.ToString("F0");
+            timerTxt.text = timer.ToString("F0");
+            if (timer <= 0)
+            {
+                timer = 0;
+            }
         }
     }
 
