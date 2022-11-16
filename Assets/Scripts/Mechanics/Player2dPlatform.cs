@@ -67,17 +67,20 @@ public class Player2dPlatform : MonoBehaviour
             direction = 1;
             //anim.SetBool("Mover", true);
             look.sprite = runSprite;
+            SoundFeet();
         }
         else if (h < 0)
         {
             direction = -1;
             //anim.SetBool("Mover", true);
             look.sprite = runSprite;
+            SoundFeet();
         }
         else
         {
             //anim.SetBool("Mover", false);
             look.sprite = idleSprite;
+            SoundFeetIdle();
         }
         if (direction == 1)
         {
@@ -111,8 +114,8 @@ public class Player2dPlatform : MonoBehaviour
 
 
     }
-    void FixedUpdate (){
-        if (IsGrounded() && Input.GetAxis("Jump")>0.3)
+    void FixedUpdate() {
+        if (IsGrounded() && Input.GetAxis("Jump") > 0.3)
         {
             jumping = true;
             rb2d.AddForce(transform.up * jump * 200);
@@ -124,5 +127,24 @@ public class Player2dPlatform : MonoBehaviour
     private bool IsGrounded()
     {
         return GroundCheck.isGrounded;
+    }
+
+    public void SoundFeet()
+    {
+        if (!sound.isPlaying)
+        {
+            //audComp[value].audSrc.clip = audClips[clip].clip;
+            //audComp[value].audSrc.volume = audComp[value].newSound.GetComponent<VolumeValue>().volValue * audClips[clip].capVolume;
+            sound.Play();
+        }
+    }
+    public void SoundFeetIdle()
+    {
+        if (sound.isPlaying)
+        {
+            //audComp[value].audSrc.clip = audClips[clip].clip;
+            //audComp[value].audSrc.volume = audComp[value].newSound.GetComponent<VolumeValue>().volValue * audClips[clip].capVolume;
+            sound.Stop();
+        }
     }
 }
