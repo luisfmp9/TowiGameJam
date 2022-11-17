@@ -5,14 +5,17 @@ using UnityEngine.UI;
 
 public class contarClicks : MonoBehaviour {
     
+    public AudioClip ClipCorrecto, ClipInCorrecto;
     public Text cantidadClicksTxt;
     int cantidadClicks;
     public Pregunta preguntaN;
     public GameObject protector, panelPerdiste;
     public EscenManager esManager;
+    private bool reproducido;
 
     void Start(){
         cantidadClicks=0;
+        reproducido=false;
     }
 
     void Update(){
@@ -25,7 +28,14 @@ public class contarClicks : MonoBehaviour {
                 Destroy(protector);
                 Timer.timerSg.battle = false;
                 cantidadClicks = 0;
+                Sound.soundSG.sounder.clip=ClipCorrecto;
+                Sound.soundSG.sounder.Play();
             } else {
+                if(reproducido==false){
+                    Sound.soundSG.sounder.clip=ClipInCorrecto;
+                    Sound.soundSG.sounder.Play();
+                    reproducido=true;
+                }
                 esManager.AbrirUI(panelPerdiste);
             }
         }

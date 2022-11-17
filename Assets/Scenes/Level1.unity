@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 460317088}
   - component: {fileID: 460317087}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: FondoContador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -826,7 +826,7 @@ GameObject:
   - component: {fileID: 738265166}
   - component: {fileID: 738265165}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1400,6 +1400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1233fed3122e3d349955a65b53453a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClipCorrecto: {fileID: 8300000, guid: dff454b4329aedc4e9fecd1d1d54aae9, type: 3}
+  ClipInCorrecto: {fileID: 8300000, guid: 14b830a3aca184940a604b0c662cf36a, type: 3}
   cantidadClicksTxt: {fileID: 901030316}
   preguntaN: {fileID: 762994266}
   protector: {fileID: 762994263}
@@ -1626,7 +1628,7 @@ GameObject:
   - component: {fileID: 1194489595}
   - component: {fileID: 1194489594}
   m_Layer: 5
-  m_Name: RawImage (1)
+  m_Name: mouseClick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9630,7 +9632,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -9977,5 +9979,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8937396966625566317, guid: 8f2e8ef1352a28d43a867aa959538d6c, type: 3}
+      propertyPath: ClipCorrecto
+      value: 
+      objectReference: {fileID: 8300000, guid: dff454b4329aedc4e9fecd1d1d54aae9, type: 3}
+    - target: {fileID: 8937396966625566317, guid: 8f2e8ef1352a28d43a867aa959538d6c, type: 3}
+      propertyPath: ClipInCorrecto
+      value: 
+      objectReference: {fileID: 8300000, guid: 14b830a3aca184940a604b0c662cf36a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f2e8ef1352a28d43a867aa959538d6c, type: 3}

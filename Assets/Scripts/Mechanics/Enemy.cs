@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour{
     public bool started;
     public GameObject panel;
     private contarClicks countClicker;
+
     void Awake() {
         started = false;
         countClicker = GameObject.FindGameObjectWithTag("Counter").GetComponent<contarClicks>();
