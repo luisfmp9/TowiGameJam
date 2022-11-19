@@ -219,6 +219,7 @@ MonoBehaviour:
   timer: 0
   timerTxt: {fileID: 254731968}
   battle: 0
+  counterClip: {fileID: 8300000, guid: eb2b9138cb4a1324f80c98fb6ac71135, type: 3}
 --- !u!1001 &264620266
 PrefabInstance:
   m_ObjectHideFlags: 0

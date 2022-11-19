@@ -28,6 +28,7 @@ public class contarClicks : MonoBehaviour {
                 Destroy(protector);
                 Timer.timerSg.battle = false;
                 cantidadClicks = 0;
+                cantidadClicksTxt.text = cantidadClicks.ToString();
                 Sound.soundSG.sounder.clip=ClipCorrecto;
                 Sound.soundSG.sounder.Play();
             } else {

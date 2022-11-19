@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour{
     public float timer;
     public Text timerTxt;
     public bool battle;
+    public AudioClip counterClip;
     void Awake(){
         if(timerSg!=null && timerSg!=this){
             Destroy(this);
@@ -35,7 +36,13 @@ public class Timer : MonoBehaviour{
             {
                 timer = 0;
             }
+            else if (timer >= 6 && timer <= 6.01f)
+            {
+                Sound.soundSG.sounder.clip = counterClip;
+                Sound.soundSG.sounder.Play();
+            }
         }
+
     }
 
 }
