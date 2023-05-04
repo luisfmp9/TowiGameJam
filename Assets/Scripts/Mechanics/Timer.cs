@@ -36,7 +36,7 @@ public class Timer : MonoBehaviour{
             {
                 timer = 0;
             }
-            else if (timer >= 6 && timer <= 6.01f)
+            else if (timer >= 6 && Sound.soundSG.sounder.clip != counterClip)
             {
                 Sound.soundSG.sounder.clip = counterClip;
                 Sound.soundSG.sounder.Play();
